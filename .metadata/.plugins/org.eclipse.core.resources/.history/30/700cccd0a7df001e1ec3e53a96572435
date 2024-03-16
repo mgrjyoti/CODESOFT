@@ -1,0 +1,18 @@
+package com.codsoft.Game;
+
+import java.util.Scanner;
+
+public class NumberGameTask {
+
+	public static void main(String[] args) {
+		boolean loop=true;
+		while (loop) {
+			game();
+		}
+	}
+
+	private static void game() {
+		System.out.println("==============Wel-Come To Number Game===============");
+		Scanner scanner= new Scanner(System.in);
+	}
+}

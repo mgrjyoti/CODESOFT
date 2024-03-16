@@ -1,0 +1,12 @@
+package com.codsoft.atm;
+
+public class ATMMachine {
+
+	public static void main(String[] args) {
+		System.out.println("=============WEL-COME TO ATM============="  );
+		BankAccount account = new BankAccount(1000); // Initial balance $1000
+        ATM atm = new ATM(account);
+        atm.run();
+	}
+
+}

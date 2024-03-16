@@ -1,0 +1,38 @@
+package com.codSoft.quiz;
+
+public class TimerThread extends Thread {
+
+	private volatile boolean running =true;
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		long startTime = System.currentTimeMillis();
+		
+		while (running) {
+			long elapasedtime= System.currentTimeMillis() - startTime;
+			System.out.println("\r Elapsed time :" + formatTime(elapasedtime));
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private String formatTime(long millis) {
+		// TODO Auto-generated method stub
+		
+		long second = millis / 1000;
+		long minits = second /60;
+		long hour = minits /60;
+		return String.format("%02d:%02d:%02d", hour, minits % 60, second % 60);
+	}
+
+	public void stopTime() {
+		running = false;
+		System.out.println("ff");
+	}
+	
+}

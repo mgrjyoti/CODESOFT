@@ -1,0 +1,56 @@
+package com.codSoft.quiz;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class Quiz {
+
+	private List<QuizQuestion> questions;
+    private int score;
+    private Scanner scanner;
+
+    public Quiz(List<QuizQuestion> questions) {
+        this.questions = questions;
+        this.score = 0;
+        this.scanner = new Scanner(System.in);
+    }
+
+    public void startQuiz() {
+        for (int i = 0; i < questions.size(); i++) {
+            QuizQuestion currentQuestion = questions.get(i);
+            displayQuestion(i + 1, currentQuestion);
+            int userChoice = getUserChoice();
+            checkAnswer(currentQuestion, userChoice);
+        }
+        displayResult();
+    }
+
+    private void displayQuestion(int questionNumber, QuizQuestion question) {
+        System.out.println("Question " + questionNumber + ": " + question.getQuestion());
+        List<String> options = question.getOptions();
+        for (int i = 0; i < options.size(); i++) {
+            System.out.println((char) ('A' + i) + ") " + options.get(i));
+        }
+    }
+
+    private int getUserChoice() {
+        System.out.print("Your choice (A/B/C/D): ");
+        String userInput = scanner.nextLine().toUpperCase();
+        return userInput.charAt(0) - 'A';
+    }
+
+    private void checkAnswer(QuizQuestion question, int userChoice) {
+        if (userChoice == question.getCorrectAnswerIndex()) {
+            System.out.println("Correct!");
+            score++;
+        } else {
+            System.out.println("Incorrect! The correct answer is: " + (char) ('A' + question.getCorrectAnswerIndex()));
+        }
+        System.out.println();
+    }
+
+    private void displayResult() {
+        System.out.println("Quiz completed!");
+        System.out.println("Your score: " + score + "/" + questions.size());
+    }
+}

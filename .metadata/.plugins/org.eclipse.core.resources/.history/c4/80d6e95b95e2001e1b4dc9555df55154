@@ -1,0 +1,24 @@
+package com.codSoft.quiz;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class QuizMain {
+
+	public static void main(String[] args) {
+		
+        List<QuizQuestion> questions = new ArrayList<>();
+        questions.add(new QuizQuestion("What is the entry point method in java program?", List.of("start()", "run()", "main()", "executr()"), 2));
+        questions.add(new QuizQuestion("Who invened java programming?", List.of("Guido van Rossum", "James Gosling", "Dennis Ritchie", "Bjaene Stroustrup"), 1));
+        questions.add(new QuizQuestion("Which component is used to compile, dedug and execute the java program?", List.of("JRE", "JIT", "JDK", "JVM"), 2));
+        questions.add(new QuizQuestion("Which one of the following is not a java feature?", List.of("Object Oriented", "Use of pointer", "Portable", "Dynamic"), 1));
+        questions.add(new QuizQuestion("What is the extension of java code file?", List.of(".js", ".txt", ".class", ".java"), 3));
+        questions.add(new QuizQuestion("Which of the following is not an OOPs concept of java?", List.of("Polymorphism", "Inheritance", "Compilation", "Encapsulation"), 2));
+        questions.add(new QuizQuestion("Which of the followoing is a type of polymorphism in java programming?", List.of("Multiple Polymorphism", "Compile time Polymorphism", "Multilevel Polymorphism", "Excecutiom Time polymorphism"), 1));
+        questions.add(new QuizQuestion("What is finally in java?", List.of("a keyword", "a block", "a method", "None of the above"), 0));
+        questions.add(new QuizQuestion("Which of these keyword is used to define interface in java?", List.of("", "", "", ""), 0));
+
+        Quiz quiz = new Quiz(questions);
+        quiz.startQuiz();
+    }
+}

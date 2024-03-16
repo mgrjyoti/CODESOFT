@@ -1,0 +1,96 @@
+package com.codSoft.quiz;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class QuizMain {
+	
+	private static boolean loop=true;
+	public static void main(String[] args) {
+		
+		System.out.println("==============Exam===============");
+		
+		while (loop) {	
+		quizes();
+	}
+}
+
+private static void quizes() {
+	System.out.println("Enter Student Name : ");
+	Scanner scanner= new Scanner(System.in);
+	String playerName =scanner.next();
+	
+	System.out.println(playerName + " Enter Your Choice.\n 1. Enter 1 for Java Quiz." +"\n 2. Enter 2 For Python Quiz." + "\n 3. Enter 3 For SQL Quiz."
+			+ "\n 4. Enter 4 For EXit Quiz.");
+	int choice=scanner.nextInt();
+	switch (choice) {
+	
+	case 1: {
+
+	}
+	break;	
+	case 2: {
+
+	}
+	break;	
+	case 3: {
+
+	}
+	break;	
+
+	case 4: {
+		System.out.println("Thank You!!!");
+		loop=false;
+		scanner.close();
+		break;
+	}
+	
+	default:
+		System.out.println("Please enter valid choice.");
+		
+	}
+		
+		
+		
+		System.out.println("Qustion on java");
+		System.out.println();
+		
+        List<QuizQuestion> questions = new ArrayList<>();
+        questions.add(new QuizQuestion("What is the entry point method in java program?", List.of("start()", "run()", "main()", "executr()"), 2));
+        questions.add(new QuizQuestion("Who invened java programming?", List.of("Guido van Rossum", "James Gosling", "Dennis Ritchie", "Bjaene Stroustrup"), 1));
+        questions.add(new QuizQuestion("Which component is used to compile, dedug and execute the java program?", List.of("JRE", "JIT", "JDK", "JVM"), 2));
+        questions.add(new QuizQuestion("Which one of the following is not a java feature?", List.of("Object Oriented", "Use of pointer", "Portable", "Dynamic"), 1));
+        questions.add(new QuizQuestion("What is the extension of java code file?", List.of(".js", ".txt", ".class", ".java"), 3));
+        questions.add(new QuizQuestion("Which of the following is not an OOPs concept of java?", List.of("Polymorphism", "Inheritance", "Compilation", "Encapsulation"), 2));
+        questions.add(new QuizQuestion("Which of the followoing is a type of polymorphism in java programming?", List.of("Multiple Polymorphism", "Compile time Polymorphism", "Multilevel Polymorphism", "Excecutiom Time polymorphism"), 1));
+        questions.add(new QuizQuestion("What is finally in java?", List.of("a keyword", "a block", "a method", "None of the above"), 0));
+        questions.add(new QuizQuestion("Which of these keyword is used to define interface in java?", List.of("intef", "int", "Interface", "interface"), 3));
+        questions.add(new QuizQuestion("Which of the following is a super class of every class in java?", List.of("ArrayList", "Object", "Abstract class", "String"), 1));
+        Quiz quiz = new Quiz(questions);
+        quiz.startQuiz();
+        
+        System.out.println();
+        System.out.println("Quastion on python");
+        List<QuizQuestion> q = new ArrayList<>();
+        q.add(new QuizQuestion("Is python caser sensitive when dealing with identifiers?", List.of("no", "yes", "machine Dependent", "none of the mentioned"), 1));
+        q.add(new QuizQuestion("WQhich of the following is the correct extention of the python file?", List.of(".python", ".py", ".p", ".pl"), 1));
+        q.add(new QuizQuestion("All keywords in python are in ______________?", List.of("Capitlized", "lower case", "Upper case", "none of the mentioned"), 1));
+        q.add(new QuizQuestion("Which of the following is used to fedine block in python?", List.of("key", "brakets", "both of the", "indentation"), 3));
+        q.add(new QuizQuestion("Which of the following character is used to give single line comment in python?", List.of("#", "//", "!", "/*"),0 ));
+        Quiz quiz1 = new Quiz(q);
+        quiz1.startQuiz();
+        
+        System.out.println();
+        System.out.println("Quastion on SQL");
+        List<QuizQuestion> q1 = new ArrayList<>();
+        q1.add(new QuizQuestion("Which command is used to create a new table in SQL?", List.of("CREATE TABLE", "BUILD TABLE", "GENERATE TABLE", "NONE OF THE ABOVE"), 0));
+        q1.add(new QuizQuestion("What does the following statement in sql do?\n DROP TABLE student;", List.of("Delete a table called student", "create table called student", "Delete table data", "no one"), 0));
+        q1.add(new QuizQuestion("What does BLOB in SQL stand for?", List.of("Binary large object", "Big largr object", "Binary language for object", "none of the above"), 3));
+        q1.add(new QuizQuestion("Full form of DDL?", List.of("Dynamic Data Language", "Data Driven Language", "Data Defination Language", "Detailed Data Language"), 2));
+        q1.add(new QuizQuestion("What are rows of a relation known as?", List.of("Degree", "Entity", "Tuple", "None"), 1));
+        Quiz quiz2 = new Quiz(q1);
+        quiz2.startQuiz();
+
+	}
+}

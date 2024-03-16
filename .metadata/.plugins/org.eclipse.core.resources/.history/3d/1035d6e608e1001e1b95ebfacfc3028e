@@ -1,0 +1,60 @@
+package com.codsoft.gradeCalculator;
+
+import java.util.Scanner;
+
+public class StudentGradeCalculator {
+
+	public static void main(String[] args) {
+		System.out.println("=============== Genrat Student Gread Calculator ================");
+		Scanner scanner = new Scanner(System.in);
+		System.out.println();
+		System.out.println("Enter Student School Name :");
+		String schoolNmae = scanner.next();
+		System.out.println("Enter Student Name :");
+		scanner.nextLine();
+		String studNmae = scanner.next();
+		System.out.println("Enter Student Roll No :");
+		scanner.nextLine();
+		int roll = scanner.nextInt();
+		System.out.println("Enter Subject Count : ");
+		int how= scanner.nextInt();
+		int totalMarks= 0;
+		for (int i = 1; i <= how; i++) {
+			System.out.println("Enter "  +i+ " Subject Name :" );
+			String subject =scanner.next();
+			System.out.println("Enter "+ i +" Subject Marks out of 100: ");
+			int marks = scanner.nextInt();
+			totalMarks +=marks;
+		}
+		
+		double avg=totalMarks /how;
+		if (avg>= 75) {
+			System.out.println( studNmae +"you get avg of marks = "+ avg +" First Class Distion");
+		}
+		else if (avg>=60) {
+			System.out.println( studNmae +"you get avg of marks = "+ avg + " First Class");
+		}
+		else if (avg >=50) {
+			System.out.println( studNmae +"you get avg of marks = "+ avg + " Secend Class");
+		}
+		else {
+			System.out.println( studNmae +"you get avg of marks = "+ avg + " Pass");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

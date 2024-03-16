@@ -1,0 +1,8 @@
+package com.codSoft.quiz;
+
+public class TimerThread extends Thread {
+
+	private boolean running =true;
+	
+	run
+}

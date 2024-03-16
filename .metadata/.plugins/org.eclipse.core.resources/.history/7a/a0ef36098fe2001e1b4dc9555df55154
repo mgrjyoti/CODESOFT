@@ -1,0 +1,51 @@
+package com.codsoft.atm;
+
+import java.util.Scanner;
+
+public class ATM {
+	private BankAccount account;
+
+    public ATM(BankAccount account) {
+        this.account = account;
+    }
+
+    public void menu() {
+        System.out.println("\nEnter your choice.:");
+        System.out.println("1. Enter 1 for Deposit.");
+        System.out.println("2. Enter 2 for Withdraw.");
+        System.out.println("3. Enter 3 for Check Balance.");
+        System.out.println("4. Enter 4 for Exit Application.");
+    }
+
+    public void run() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            menu();
+            System.out.println();
+            System.out.print("Enter choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    System.out.print("Enter amount to deposit: Rs ");
+                    double depositAmount = Double.parseDouble(scanner.nextLine());
+                    account.deposit(depositAmount);
+                    break;
+                case "2":
+                    System.out.print("Enter amount to withdraw: Rs ");
+                    double withdrawAmount = Double.parseDouble(scanner.nextLine());
+                    account.withdraw(withdrawAmount);
+                    break;
+                case "3":
+                    account.checkBalance();
+                    break;
+                case "4":
+                    System.out.println("Exiting ATM. Thank you!!!");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please select a valid option.");
+            }
+        }
+    }
+}

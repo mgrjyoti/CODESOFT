@@ -1,0 +1,18 @@
+package com.codSoft.quiz;
+
+public class Timer {
+
+	public static void main(String[] args) {
+		int seconds= 10;
+		for (int i = seconds; i >= 0; i--) {
+			System.out.print (" " +i);
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+		System.out.println("done");
+	}
+}

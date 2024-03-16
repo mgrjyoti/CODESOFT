@@ -1,0 +1,38 @@
+package com.codsoft.Game;
+
+import java.util.Scanner;
+
+public class NumberGameTask {
+
+	public static void main(String[] args) {
+		boolean loop=true;
+		while (loop) {
+			game();
+		}
+	}
+
+	private static void game() {
+		System.out.println("==============Wel-Come To Number Game===============");
+		System.out.println("Enter Player Name : ");
+		Scanner scanner= new Scanner(System.in);
+		String playerName =scanner.next();
+		
+		System.out.println(playerName + "Enter Your Choice.\n 1.Enter 1 for Play Game"
+				+ "\n 2. Enter 2 For EXit Game.");
+		int choice=scanner.nextInt();
+		
+		switch (choice) {
+		
+		case 1: {
+			
+			break;
+		}
+		case 2: {
+			System.out.println("Thank You!!!");
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + choice);
+		}
+	}
+}

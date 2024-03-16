@@ -1,0 +1,47 @@
+package com.codsoft.Game;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGame {
+
+	public static void main(String[] args) {
+		int min=1;
+		int max=100;
+		int turms;
+		int attempts;
+		Scanner scanner= new Scanner(System.in);
+		
+		Random random = new Random();
+
+		System.out.println("=================== WEL-COME TO NUMBER GAME ======================");
+		System.out.println("Enter Player Name : ");
+		String pname= scanner.next();
+		System.out.println(pname + "How Many Rounds You Want TO play?");
+		turms=scanner.nextInt();
+		
+		for (int i = 1; i  <=turms; i++) {
+			System.out.println("\n Turm "+ turms +" : ");
+			int snum=random.nextInt(max- min)+min;
+			int round=0;
+			int guss;
+			
+			while (true) {
+				System.out.println("Guss The number between "+ min + " and "+max +":" );
+				guss=scanner.nextInt();
+				round ++;
+				if (guss < snum) {
+					System.out.println("too low try agin");
+				}
+				else if (guss > snum) {
+					System.out.println("to high try gaain");
+				}
+				else {
+					System.out.println("congratulation you have guess correct number."+guss+ "in attempts "+ round);
+					round+=turms;
+					break;
+				}
+			}
+		}
+	}
+}

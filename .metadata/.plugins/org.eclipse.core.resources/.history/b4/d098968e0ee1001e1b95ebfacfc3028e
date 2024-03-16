@@ -1,0 +1,14 @@
+package com.codSoft.quiz;
+
+public class QuizMain {
+
+	public static void main(String[] args) {
+        List<QuizQuestion> questions = new ArrayList<>();
+        questions.add(new QuizQuestion("What is the capital of France?", List.of("London", "Paris", "Berlin", "Rome"), 1));
+        questions.add(new QuizQuestion("Which planet is known as the Red Planet?", List.of("Mars", "Jupiter", "Venus", "Saturn"), 0));
+        questions.add(new QuizQuestion("What is the chemical symbol for water?", List.of("H2O", "CO2", "NaCl", "O2"), 0));
+
+        Quiz quiz = new Quiz(questions);
+        quiz.startQuiz();
+    }
+}
